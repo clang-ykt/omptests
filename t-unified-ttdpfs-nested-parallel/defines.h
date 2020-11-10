@@ -1,6 +1,6 @@
 
 #undef NESTED_PARALLEL_FOR
-#define NESTED_PARALLEL_FOR(PRE,X,POST,VERIFY) TESTD("omp target teams distribute parallel for dist_schedule(static,2) num_teams(tms) num_threads(th)", { \
+#define NESTED_PARALLEL_FOR(PRE,X,POST,VERIFY) TESTD("omp target teams distribute parallel for dist_schedule(static,2) num_teams(tms) num_threads(th)", \
 for (int idx = 0; idx < tms*th; idx++) { \
 PRE  \
 _Pragma("omp parallel for if(threads[0] > 1) num_threads(threads[0]) NESTED_PARALLEL_FOR_CLAUSES") \
@@ -13,7 +13,7 @@ _Pragma("omp parallel for schedule(static,9) if(threads[0] > 1) num_threads(thre
   X  \
 POST \
 } \
-}, VERIFY)
+, VERIFY)
 
 #undef SUMS
 #define SUMS (4)

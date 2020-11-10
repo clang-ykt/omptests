@@ -164,7 +164,7 @@ int main(void) {
   //
   // Test: lastprivate clause on omp target teams distribute parallel for with nested parallel.
   //
-  TESTD("omp target teams distribute parallel for num_teams(tms) num_threads(th)", {
+  TESTD("omp target teams distribute parallel for num_teams(tms) num_threads(th)",
   for (int idx = 0; idx < tms*th; idx++) {
     double q0[1];
     double q1[1];
@@ -200,7 +200,7 @@ int main(void) {
     }
     S[idx] += tmp;
   }
-  }, VERIFY(0, tms*th, S[i], (double) 2 * (N + (N/2*(N+1))) ));
+  , VERIFY(0, tms*th, S[i], (double) 2 * (N + (N/2*(N+1))) ));
 
   //
   // Test: private clause on omp target teams distribute parallel for with nested parallel.
@@ -314,7 +314,7 @@ int main(void) {
   // Test: Ensure coalesced scheduling on GPU.
   //
   if (!cpuExec) {
-    TESTD("omp target teams distribute parallel for num_teams(tms) num_threads(th)", {
+    TESTD("omp target teams distribute parallel for num_teams(tms) num_threads(th)",
       for (int idx = 0; idx < tms*th; idx++) {
         S[idx] = 0;
         for (int i = 0; i < 96; i++) {
@@ -338,7 +338,7 @@ int main(void) {
         }
         S[idx] = tmp;
       }
-    }, VERIFY(0, tms*th, S[i], (double) 3 * 95 * 48 ));
+    , VERIFY(0, tms*th, S[i], (double) 3 * 95 * 48 ));
   } else {
     DUMP_SUCCESS(1);
   }

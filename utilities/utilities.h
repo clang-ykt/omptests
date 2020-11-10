@@ -71,12 +71,16 @@
     printf ("Succeeded\n"); \
 }
 
+/* NOTE: If needed for the pragram 'T' needs to add '{ }'; they are not
+   added unconditionally as, e.g., for '#pragma omp ... for', no '{}'
+   are permitted.  */
+
 #define TESTD(D, T, V) { \
   int fail = 0; \
   int trial; \
   for (int trial = 0; trial < TRIALS && fail == 0; trial++) { \
     _Pragma(D) \
-     {T} \
+     T \
     V \
   } \
   if (fail) { \
@@ -86,13 +90,17 @@
   } \
 }
 
+/* NOTE: If needed for the pragram 'T' needs to add '{ }'; they are not
+   added unconditionally as, e.g., for '#pragma omp ... for', no '{}'
+   are permitted.  */
+
 #define TESTD2(D, PRE, T, POST, V) { \
   int fail = 0; \
   int trial; \
   for (int trial = 0; trial < TRIALS && fail == 0; trial++) { \
     PRE \
     _Pragma(D) \
-     {T} \
+     T \
     POST \
     V \
   } \

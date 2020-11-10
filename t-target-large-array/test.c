@@ -17,9 +17,7 @@ int Test(int start, int size)
   for(i=size; i<N; i++) b[i] = -1;
 
   #pragma omp target parallel for
-  {
     for(int i=start; i<size; i++) b[i] += 1;
-  }
 
   for(i=0; i<start && errors<25; i++) {
     if (b[i] != -1) printf("%4i: before, got %d, expected %d, %d error\n", i, b[i], -1, ++errors);

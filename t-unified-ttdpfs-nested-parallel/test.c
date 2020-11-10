@@ -159,7 +159,7 @@ int main(void) {
   //
   // Test: lastprivate clause on omp target teams distribute parallel for with nested parallel.
   //
-  TESTD("omp target teams distribute parallel for dist_schedule(static,2) num_teams(tms) num_threads(th)", {
+  TESTD("omp target teams distribute parallel for dist_schedule(static,2) num_teams(tms) num_threads(th)",
   for (int idx = 0; idx < tms*th; idx++) {
     double q0[1];
     double q1[1];
@@ -195,7 +195,7 @@ int main(void) {
     }
     S[idx] += tmp;
   }
-  }, VERIFY(0, tms*th, S[i], (double) 2 * (N + (N/2*(N+1))) ));
+  , VERIFY(0, tms*th, S[i], (double) 2 * (N + (N/2*(N+1))) ));
 
   //
   // Test: private clause on omp target teams distribute parallel for with nested parallel.
