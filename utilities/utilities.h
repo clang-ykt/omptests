@@ -20,7 +20,7 @@
   int errorNum = 0 ;     \
   for (i = LB; i < UB; i++) { \
     if (fabs(X - VAL) > EPSILON) { \
-      printf ("Failed at %3d with %s, expected %f, got %f\n", i, #X, VAL, X); \
+      printf ("%s:%d: Failed at %3d with %s, expected %f, got %f\n", __FILE__, __LINE__, i, #X, VAL, X); \
       fail = 1; \
       if (errorNum++>10) break;   \
     } \
@@ -32,7 +32,7 @@
   int errorNum = 0 ;     \
   for (i = LB; i < UB; i++) { \
     if (X != VAL) { \
-      printf ("Failed at %3d with %s, expected %f, got %f\n", i, #X, VAL, X); \
+      printf ("%s:%d: Failed at %3d with %s, expected %lld, got %lld\n", __FILE__, __LINE__, i, #X, (long long) VAL, (long long) X); \
       fail = 1; \
       if (errorNum++>10) break;   \
     } \
@@ -44,7 +44,7 @@
   int errorNum = 0 ;     \
   for (i = LB; i < UB; i++) { \
     if (X[i] != Y[i]) { \
-      printf ("Failed at %3d, expected %d, got %d\n", i, X[i], Y[i]); \
+      printf ("%s:%d: Failed at %3d, expected %d, got %d\n", __FILE__, __LINE__, i, X[i], Y[i]); \
       fail = 1; \
       if (errorNum++>10) break;   \
     } \
@@ -60,15 +60,15 @@
     V \
   } \
   if (fail) { \
-    printf ("Failed\n"); \
+    printf ("%s:%d: Failed\n", __FILE__, __LINE__); \
   } else { \
-    printf ("Succeeded\n"); \
+    printf ("%s:%d: Succeeded\n", __FILE__, __LINE__); \
   } \
 }
 
 #define DUMP_SUCCESS(N) { \
   for (int i = 0; i < (N); i++) \
-    printf ("Succeeded\n"); \
+    printf ("%s:%d: Succeeded\n", __FILE__, __LINE__); \
 }
 
 /* NOTE: If needed for the pragram 'T' needs to add '{ }'; they are not
@@ -84,9 +84,9 @@
     V \
   } \
   if (fail) { \
-    printf ("Failed\n"); \
+    printf ("%s:%d: Failed\n", __FILE__, __LINE__); \
   } else { \
-    printf ("Succeeded\n"); \
+    printf ("%s:%d: Succeeded\n", __FILE__, __LINE__); \
   } \
 }
 
@@ -105,9 +105,9 @@
     V \
   } \
   if (fail) { \
-    printf ("Failed\n"); \
+    printf ("%s:%d: Failed\n", __FILE__, __LINE__); \
   } else { \
-    printf ("Succeeded\n"); \
+    printf ("%s:%d: Succeeded\n", __FILE__, __LINE__); \
   } \
 }
 
@@ -121,9 +121,9 @@
     { _V }  \
   } \
   if (fail) { \
-    printf ("Failed\n"); \
+    printf ("%s:%d: Failed\n", __FILE__, __LINE__); \
   } else { \
-    printf ("Succeeded\n"); \
+    printf ("%s:%d: Succeeded\n", __FILE__, __LINE__); \
   } \
 }
 
