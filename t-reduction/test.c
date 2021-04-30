@@ -466,6 +466,7 @@ int main(void) {
   //
   // Test: reduction on distribute parallel for.
   //
+  OUT[0] = OUT[1] = OUT[2] = OUT[3] = OUT[4] = OUT[5] = 0;
   TESTD("omp target", {
     _Pragma("omp teams num_teams(6)")
     {
@@ -476,7 +477,7 @@ int main(void) {
         Rd1 += Ad[i] + (Bd[i] + Cd[i]);
         Rd2 += Ad[i] + (Bd[i] + Cd[i]);
       }
-      unsigned tm = omp_get_team_num(); // assume 6 teams
+      unsigned tm = omp_get_team_num(); // assume up to 6 teams
       OUT[tm] = (long long) (Rd1 + Rd2);
     }
   }, VERIFY(0, 1, OUT[0]+OUT[1]+OUT[2]+OUT[3]+OUT[4]+OUT[5],
