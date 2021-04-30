@@ -164,7 +164,7 @@ int main(void) {
   // Test: lastprivate clause on omp teams distribute parallel for with nested parallel.
   //
   TESTD("omp target", {
-  _Pragma("teams distribute parallel for num_teams(tms) num_threads(th)")
+  _Pragma("omp teams distribute parallel for num_teams(tms) num_threads(th)")
   for (int idx = 0; idx < tms*th; idx++) {
     double q0[1];
     double q1[1];
@@ -315,7 +315,7 @@ int main(void) {
   //
   if (!cpuExec) {
     TESTD("omp target", {
-      _Pragma("teams distribute parallel for num_teams(tms) num_threads(th)")
+      _Pragma("omp teams distribute parallel for num_teams(tms) num_threads(th)")
       for (int idx = 0; idx < tms*th; idx++) {
         S[idx] = 0;
         for (int i = 0; i < 96; i++) {

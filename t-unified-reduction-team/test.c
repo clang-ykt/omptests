@@ -556,7 +556,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -577,7 +577,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(static) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(static) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -599,7 +599,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(static,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(static,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -621,7 +621,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(dynamic) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(dynamic) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -643,7 +643,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(dynamic,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) schedule(dynamic,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -665,7 +665,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -686,7 +686,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -708,7 +708,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -731,7 +731,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -754,7 +754,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -777,7 +777,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -800,7 +800,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -823,7 +823,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -846,7 +846,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -869,7 +869,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -892,7 +892,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(runtime) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(runtime) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1224,7 +1224,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -1245,7 +1245,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(static) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(static) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -1267,7 +1267,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(static,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(static,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1289,7 +1289,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(dynamic) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(dynamic) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -1311,7 +1311,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(dynamic,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) schedule(dynamic,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1333,7 +1333,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -1354,7 +1354,7 @@ int main(void) {
           REDUCTION_INIT();
         },
         {
-        _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static) REDUCTION_CLAUSES")
+        _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static) REDUCTION_CLAUSES")
         REDUCTION_LOOP()
         },
         {
@@ -1376,7 +1376,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static) schedule(static,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1399,7 +1399,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1422,7 +1422,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(static,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1445,7 +1445,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1468,7 +1468,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1491,7 +1491,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1514,7 +1514,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided,sch) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(guided,sch) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1537,7 +1537,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(dynamic) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
@@ -1560,7 +1560,7 @@ int main(void) {
             REDUCTION_INIT();
           },
           {
-          _Pragma("teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(runtime) REDUCTION_CLAUSES")
+          _Pragma("omp teams distribute parallel for simd num_teams(tms) thread_limit(ths) dist_schedule(static,sch) schedule(runtime) REDUCTION_CLAUSES")
           REDUCTION_LOOP()
           },
           {
