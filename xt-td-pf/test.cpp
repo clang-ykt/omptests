@@ -1,5 +1,6 @@
 #include <omp.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_N 25000
 #define SIZE 1000
